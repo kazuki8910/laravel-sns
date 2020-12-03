@@ -1,5 +1,5 @@
 共有フォルダマウント
-sudo vmware-config-tools.pl -d --clobber-kernel-modules=vmhgfs^C
+sudo vmware-config-tools.pl -d --clobber-kernel-modules=vmhgfs
 
 ディレクトリ移動
 cd /mnt/hgfs/D/study/laravel-sns/laradock/

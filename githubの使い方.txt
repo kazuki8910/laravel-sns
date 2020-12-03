@@ -1,0 +1,8 @@
+全ファイルをコミット対象に
+git add .
+
+コミットの確認
+git status
+
+コミット
+git commit -a
