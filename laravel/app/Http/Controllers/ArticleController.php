@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Article::class, 'article');
+    }
     
     public function index()
     {
@@ -18,7 +22,7 @@ class ArticleController extends Controller
 
     public function create()
     {
-        return view('articles.create');
+        return view('article.create');
     }
     
     public function store(ArticleRequest $request, Article $article)
@@ -32,6 +36,26 @@ class ArticleController extends Controller
     
     public function edit(Article $article)
     {
-        return view('articles.edit', ['article' => $article]);
+        return view('articles.edit', ['article' => $article]);    
     }
+    
+    public function update(ArticleRequest $request, Article $article)
+    {   
+        $article->title = $request->title;
+        $article->body = $request->body;
+        $article->save();
+        // $article->fill($request->all())->save();
+        return redirect()->route('articles.index');
+    }
+
+    public function destroy(Article $article)
+    {
+        $article->delete();
+        return redirect()->route('articles.index');
+    }
+    
+    public function show(Article $article)
+    {
+        return view('articles.show', ['article' => $article]);
+    }    
 }

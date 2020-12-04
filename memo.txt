@@ -4,7 +4,9 @@ sudo vmware-config-tools.pl -d --clobber-kernel-modules=vmhgfs
 ディレクトリ移動
 cd /mnt/hgfs/D/study/laravel-sns/laradock/
 
+
+
 ドッカー起動
 docker-compose up -d workspace php-fpm nginx postgres
 
-2-4から
+5-1

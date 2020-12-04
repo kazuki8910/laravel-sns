@@ -6,3 +6,9 @@ git status
 
 コミット
 git commit -a
+
+コミットの確認
+git status
+
+プッシュ
+git push origin ブランチ名
